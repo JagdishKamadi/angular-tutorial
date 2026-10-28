@@ -1,0 +1,13 @@
+## Angular Commands
+
+# Install angular cli globally
+=> npm install -g @angular/cli
+
+# To check angular cli version
+=> ng version
+
+# To create new angular project
+=> ng new <project-name>
+
+# To run angular application
+=> ng serve
