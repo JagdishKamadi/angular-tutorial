@@ -11,3 +11,6 @@
 
 # To run angular application
 => ng serve
+
+# To create angular component
+=> ng generate component <component-name> OR ng g c <component-name>
