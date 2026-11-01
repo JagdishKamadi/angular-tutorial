@@ -1,7 +1,6 @@
 <!doctype html>
 <body>
-  @if (showMessage) {
-    <p>Hello World!</p>
-  }
-  <button (click)="toggle()">Show/Hide</button>
+  <ul>
+    <li *ngFor="let lang of languages">{{ lang }}</li>
+  </ul>
 </body>
