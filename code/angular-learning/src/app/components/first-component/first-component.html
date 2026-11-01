@@ -1,2 +1,6 @@
-<p>first-component works!</p>
-<button (click)="showMessage()">Click here!</button>
+<!doctype html>
+<body>
+  <p>Enter text</p>
+  <input type="text" [(ngModel)]="username" />
+  <p>Live preview:Hello, {{ username }}</p>
+</body>
