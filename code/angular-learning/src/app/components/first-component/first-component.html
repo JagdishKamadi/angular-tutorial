@@ -1,4 +1,5 @@
 <!doctype html>
 <body>
-  <p *ngIf="true">Hello Jack the Admin</p>
+  <p *ngIf="showMessage">Hello Jack the admin!</p>
+  <button (click)="toggle()">Show/Hide</button>
 </body>
