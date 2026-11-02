@@ -9,5 +9,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  isSuccess: string = 'success';
+  selectedTechStack: string = 'Python';
 }

@@ -1,4 +1,9 @@
 <!doctype html>
 <body>
-  <p [ngStyle]="{ color: isSuccess == 'success' ? 'green' : 'red' }">Hello World!</p>
+  <div [ngSwitch]="selectedTechStack">
+    <p *ngSwitchCase="'Java'">Selected Java</p>
+    <p *ngSwitchCase="'Python'">Selected Python</p>
+    <p *ngSwitchCase="'SQL'">Selected SQL</p>
+    <p *ngSwitchDefault="">Selected Unknown Language</p>
+  </div>
 </body>
