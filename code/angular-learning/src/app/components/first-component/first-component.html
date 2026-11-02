@@ -1,12 +1,4 @@
 <!doctype html>
-<p [ngClass]="isSuccess">Hello World!</p>
 <body>
-  <style>
-    .success {
-      color: green;
-    }
-    .error {
-      color: red;
-    }
-  </style>
+  <p [ngStyle]="{ color: isSuccess == 'success' ? 'green' : 'red' }">Hello World!</p>
 </body>
