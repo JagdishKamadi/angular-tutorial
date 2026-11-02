@@ -9,5 +9,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  languages: string[] = ['Java', 'Python', 'C++', 'SQl'];
+  isSuccess: string = 'error';
 }

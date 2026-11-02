@@ -1,6 +1,12 @@
 <!doctype html>
+<p [ngClass]="isSuccess">Hello World!</p>
 <body>
-  @for (lang of languages; track languages) {
-    <li>{{ lang }}</li>
-  }
+  <style>
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+  </style>
 </body>
