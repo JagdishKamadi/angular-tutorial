@@ -1,9 +1,14 @@
-<!doctype html>
-<body>
-  <div [ngSwitch]="selectedTechStack">
-    <p *ngSwitchCase="'Java'">Selected Java</p>
-    <p *ngSwitchCase="'Python'">Selected Python</p>
-    <p *ngSwitchCase="'SQL'">Selected SQL</p>
-    <p *ngSwitchDefault="">Selected Unknown Language</p>
-  </div>
-</body>
+@switch (selectedTechStack) {
+  @case ('Java') {
+    <p>You selected Java</p>
+  }
+  @case ('Python') {
+    <p>You selected Python</p>
+  }
+  @case ('SQL') {
+    <p>You selected SQL</p>
+  }
+  @default {
+    <p>You selected Unknown Language</p>
+  }
+}
