@@ -1,14 +1,6 @@
-@switch (selectedTechStack) {
-  @case ('Java') {
-    <p>You selected Java</p>
-  }
-  @case ('Python') {
-    <p>You selected Python</p>
-  }
-  @case ('SQL') {
-    <p>You selected SQL</p>
-  }
-  @default {
-    <p>You selected Unknown Language</p>
-  }
+<button (click)="toggleMessage()">Show/Hide</button>
+@if (showMessage) {
+  <p>Hello World!</p>
+} @else {
+  <p>Blank!</p>
 }

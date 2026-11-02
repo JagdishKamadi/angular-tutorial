@@ -9,5 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  selectedTechStack: string = 'SQL';
+  showMessage: boolean = true;
+  toggleMessage() {
+    this.showMessage = !this.showMessage;
+  }
 }
