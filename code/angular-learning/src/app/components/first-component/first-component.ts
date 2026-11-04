@@ -9,5 +9,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  currency: number = 11234;
+  showMessage: string = 'Hello World!';
 }
