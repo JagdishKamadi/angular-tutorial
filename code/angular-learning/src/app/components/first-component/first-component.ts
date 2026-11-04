@@ -10,4 +10,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class FirstComponent {
   showMessage: string = 'Hello World!';
+  user: object = { name: 'Jack', age: 21 };
 }
