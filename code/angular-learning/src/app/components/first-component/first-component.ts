@@ -9,8 +9,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  showMessage: boolean = true;
-  toggleMessage() {
-    this.showMessage = !this.showMessage;
-  }
+  showMessage: string = 'Hello World!';
 }
