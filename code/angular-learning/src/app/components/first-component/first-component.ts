@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,5 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  @Input() childMessage: string = '';
+  messageForParent: string = 'Hello Parent bhai!';
+  @Output() notify = new EventEmitter();
+  emitMessageToParent() {
+    this.notify.emit(this.messageForParent);
+  }
 }

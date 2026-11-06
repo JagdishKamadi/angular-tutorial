@@ -1,2 +1,3 @@
 <h2>I am parent component!</h2>
-<my-first-component [childMessage]="parrentMessage"></my-first-component>
+<my-first-component (notify)="outputMessage($event)"></my-first-component>
+<h3>{{ parentMessage }}</h3>

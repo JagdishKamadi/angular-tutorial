@@ -9,5 +9,8 @@ import { FirstComponent } from './components/first-component/first-component';
   styleUrl: './app.css',
 })
 export class App {
-  parrentMessage: string = 'Hello Child!';
+  parentMessage: string = '';
+  outputMessage(data: string) {
+    this.parentMessage = data;
+  }
 }
