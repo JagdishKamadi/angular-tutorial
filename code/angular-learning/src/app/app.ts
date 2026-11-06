@@ -9,5 +9,5 @@ import { FirstComponent } from './components/first-component/first-component';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('angular-learning');
+  parrentMessage: string = 'Hello Child!';
 }

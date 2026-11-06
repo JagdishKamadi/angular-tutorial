@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-first-component',
+  selector: 'my-first-component',
   imports: [CommonModule, FormsModule],
   templateUrl: './first-component.html',
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  showMessage: string = 'Hello World!';
-  user: object = { name: 'Jack', age: 21 };
+  @Input() childMessage: string = '';
 }
