@@ -1,2 +1,5 @@
-<h2>I am child component!</h2>
-<button (click)="emitMessageToParent()">Message from child</button>
+<h1>Salary Detials</h1>
+<button (click)="getSalary()">Click here to get salary details</button>
+@if (displayedSalary !== null) {
+  <p>Final salary: {{ displayedSalary }}</p>
+}

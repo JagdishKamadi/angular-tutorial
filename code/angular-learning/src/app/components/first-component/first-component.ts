@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SalaryService } from '../../service/salary-service';
 
 @Component({
   selector: 'my-first-component',
@@ -9,9 +10,19 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  messageForParent: string = 'Hello Parent bhai!';
-  @Output() notify = new EventEmitter();
-  emitMessageToParent() {
-    this.notify.emit(this.messageForParent);
+  salary: number = 1000;
+  bonus: number = 100;
+  finalSalary: number | null = null;
+  salaryService: SalaryService | null = null;
+  constructor() {
+    this.salaryService = new SalaryService();
+    this.finalSalary = this.salaryService.getSalaryDetails(this.salary, this.bonus);
+  }
+
+  displayedSalary: number | null = null;
+
+  getSalary() {
+    this.displayedSalary = this.finalSalary;
+    console.log('Final salary:', this.displayedSalary);
   }
 }
