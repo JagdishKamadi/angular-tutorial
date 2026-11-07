@@ -13,9 +13,7 @@ export class FirstComponent {
   salary: number = 1000;
   bonus: number = 100;
   finalSalary: number | null = null;
-  salaryService: SalaryService | null = null;
-  constructor() {
-    this.salaryService = new SalaryService();
+  constructor(private salaryService: SalaryService) {
     this.finalSalary = this.salaryService.getSalaryDetails(this.salary, this.bonus);
   }
 
