@@ -1,5 +1,4 @@
-<h1>Salary Detials</h1>
-<button (click)="getSalary()">Click here to get salary details</button>
-@if (displayedSalary !== null) {
-  <p>Final salary: {{ displayedSalary }}</p>
-}
+<h3>Observable output</h3>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
