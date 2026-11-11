@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -5,11 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ObservableService {
-  items: number[] = [11, 22, 33];
-  getNumber(): Observable<number> {
-    return new Observable((observer) => {
-      this.items.forEach((item) => observer.next(item));
-      observer.complete;
-    });
+  constructor(private httpClient: HttpClient) {}
+  getUsers(): Observable<any> {
+    return this.httpClient.get('https://jsonplaceholder.typicode.com/users');
   }
 }
