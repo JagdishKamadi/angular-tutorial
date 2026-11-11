@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { ObservableService } from '../../service/observable-service';
 
 @Component({
@@ -10,14 +11,10 @@ import { ObservableService } from '../../service/observable-service';
   styleUrl: './first-component.css',
 })
 export class FirstComponent implements OnInit {
-  users = signal<any[]>([]);
+  users$!: Observable<any[]>;
   constructor(private observableService: ObservableService) {}
 
   ngOnInit(): void {
-    this.observableService.getUsers().subscribe({
-      next: (data) => {
-        this.users.set(data);
-      },
-    });
+    this.users$ = this.observableService.getUsers();
   }
 }
