@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { filter, map, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,6 @@ export class ObservableService {
   getUsers(): Observable<any[]> {
     return this.httpClient
       .get<any[]>('https://jsonplaceholder.typicode.com/users')
-      .pipe(map((users) => users.filter((u) => u.name.startsWith('C'))));
+      .pipe(tap((users) => console.log('Users: ', users)));
   }
 }
