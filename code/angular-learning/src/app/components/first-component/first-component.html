@@ -1,5 +1,5 @@
 <h1>Angular Template Form</h1>
-<form>
+<form #f="ngForm">
   <input
     type="text"
     name="username"
@@ -9,4 +9,5 @@
     ngModel
   />
   <p *ngIf="username.invalid" style="color: red">Username must be of 6 characters</p>
+  <p *ngIf="f.invalid" style="color: blue">Check all field properly</p>
 </form>
