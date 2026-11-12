@@ -9,13 +9,8 @@ export class ObservableService {
   constructor(private httpClient: HttpClient) {}
 
   getUsers(): Observable<any[]> {
-    return this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/users').pipe(
-      map((users) =>
-        users.map((user) => ({
-          // ...user, // example of spread operators
-          name: user.name.toUpperCase(),
-        })),
-      ),
-    );
+    return this.httpClient
+      .get<any[]>('https://jsonplaceholder.typicode.com/users')
+      .pipe(map((users) => users.filter((u) => u.name.startsWith('C'))));
   }
 }
