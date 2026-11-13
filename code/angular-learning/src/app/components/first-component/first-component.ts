@@ -1,20 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { ObservableService } from '../../service/observable-service';
+import { Component } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'my-first-component',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './first-component.html',
   styleUrl: './first-component.css',
 })
-export class FirstComponent implements OnInit {
-  users$!: Observable<any[]>;
-  constructor(private observableService: ObservableService) {}
-
-  ngOnInit(): void {
-    this.users$ = this.observableService.getUsers();
-  }
+export class FirstComponent {
+  userForm = new FormGroup({
+    username: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+  });
 }

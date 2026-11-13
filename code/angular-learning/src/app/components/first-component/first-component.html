@@ -1,13 +1,11 @@
-<h1>Angular Template Form</h1>
-<form #f="ngForm">
-  <input
-    type="text"
-    name="username"
-    placeholder="Enter username"
-    minlength="6"
-    #username="ngModel"
-    ngModel
-  />
-  <p *ngIf="username.invalid" style="color: red">Username must be of 6 characters</p>
-  <p *ngIf="f.invalid" style="color: blue">Check all field properly</p>
+<h1>Angular Reactive Form</h1>
+<form [formGroup]="userForm">
+  <input type="text" placeholder="Enter username" formControlName="username" />
+  <p *ngIf="userForm.get('username')?.invalid" style="color: red">
+    Username must be of 3 charactes
+  </p>
+  <input type="text" placeholder="Enter password" formControlName="password" />
+  <p *ngIf="userForm.get('password')?.invalid" style="color: red">
+    Password must be of 8 charactes
+  </p>
 </form>
