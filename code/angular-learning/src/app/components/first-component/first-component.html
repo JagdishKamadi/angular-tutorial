@@ -1,11 +1,11 @@
 <h1>Angular Reactive Form</h1>
 <form [formGroup]="userForm">
   <input type="text" placeholder="Enter username" formControlName="username" />
-  <p *ngIf="userForm.get('username')?.invalid" style="color: red">
-    Username must be of 3 charactes
-  </p>
+  @if (getUsername?.invalid) {
+    <p style="color: red">Username must be of 3 charactes</p>
+  }
   <input type="text" placeholder="Enter password" formControlName="password" />
-  <p *ngIf="userForm.get('password')?.invalid" style="color: red">
-    Password must be of 8 charactes
-  </p>
+  @if (getPassword?.invalid) {
+    <p style="color: red">Password must be of 8 charactes</p>
+  }
 </form>

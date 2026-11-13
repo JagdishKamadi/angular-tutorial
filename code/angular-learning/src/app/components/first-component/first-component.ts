@@ -19,4 +19,12 @@ export class FirstComponent {
     username: new FormControl('', [Validators.required, Validators.minLength(3)]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
+
+  get getUsername() {
+    return this.userForm.get('username');
+  }
+
+  get getPassword() {
+    return this.userForm.get('password');
+  }
 }
