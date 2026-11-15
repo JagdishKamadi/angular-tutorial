@@ -1,11 +1,22 @@
-<h1>Angular Reactive Form</h1>
-<form [formGroup]="userForm">
-  <input type="text" placeholder="Enter username" formControlName="username" />
-  @if (getUsername?.invalid) {
-    <p style="color: red">Username must be of 3 charactes</p>
-  }
-  <input type="text" placeholder="Enter password" formControlName="password" />
-  @if (getPassword?.invalid) {
-    <p style="color: red">Password must be of 8 charactes</p>
-  }
-</form>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <button (click)="increment()">Increment normally</button>
+      <br />
+      <label for="normalValue">Count: {{ normalCount }} </label>
+      <br />
+      <br />
+      <button (click)="signalIncrement()">Increment using signal</button>
+      <br />
+      <label for="normalValue">Count: {{ signalCount() }} </label>
+      <br />
+      <br />
+    </main>
+  </body>
+</html>

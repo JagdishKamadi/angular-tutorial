@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal, Signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -15,16 +15,12 @@ import {
   styleUrl: './first-component.css',
 })
 export class FirstComponent {
-  userForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-  });
-
-  get getUsername() {
-    return this.userForm.get('username');
+  normalCount: number = 0;
+  signalCount = signal(0);
+  public increment(): void {
+    this.normalCount++;
   }
-
-  get getPassword() {
-    return this.userForm.get('password');
+  public signalIncrement(): void {
+    this.signalCount.set(this.signalCount() + 1);
   }
 }

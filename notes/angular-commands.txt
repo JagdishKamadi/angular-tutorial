@@ -14,3 +14,9 @@
 
 # To create angular component
 => ng generate component <component-name> OR ng g c <component-name>
+
+# To install bootstrap
+=> npm install bootstrap --save
+
+# To generate class
+=> ng generate class <class-name>
